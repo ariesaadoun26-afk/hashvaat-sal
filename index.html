@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0B7A55">
+<title>השוואת סל</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&family=Secular+One&display=swap">
+<link rel="stylesheet" href="style.css?v=202611060142">
+</head>
+<body>
+<a class="skip" href="#results" data-i18n="skip">דילוג לתוצאות</a>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="topbar">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">₪</span>
+        <span class="brand-name" data-i18n="brand">השוואת סל</span>
+      </div>
+      <button id="lang-switch" class="lang-switch" type="button" lang="fr">Français</button>
+    </div>
+    <h1 data-i18n="h1">איפה הסל שלכם זול יותר?</h1>
+    <p class="lead" data-i18n="lead">משווים מחירים בין אתרי המשלוחים של שופרסל, רמי לוי וטיב טעם, לפי המחירים הרשמיים שהרשתות מפרסמות.</p>
+    <div class="search">
+      <svg class="search-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <label for="q" class="sr-only" data-i18n="search_label">חיפוש מוצר</label>
+      <input id="q" type="search" data-i18n-ph="search_ph" placeholder="חפשו מוצר או ברקוד, למשל: חלב 3%, במבה" autocomplete="off">
+    </div>
+    <div id="chains" class="chains" data-i18n-aria="chains_label" aria-label="הרשתות שמושוות"></div>
+  </div>
+</header>
+
+<main>
+  <nav id="depts" class="depts" data-i18n-aria="depts_label" aria-label="מחלקות"></nav>
+
+  <div class="layout">
+    <section data-i18n-aria="products_label" aria-label="מוצרים">
+      <div id="crumbs" class="crumbs" hidden></div>
+      <div id="groups" class="groups" hidden role="group" data-i18n-aria="groups_label" aria-label="תתי-קטגוריות"></div>
+      <div id="toolbar" class="toolbar" hidden>
+        <span id="count-label" class="count-label" aria-live="polite"></span>
+        <label class="toggle"><input type="checkbox" id="multi" checked> <span data-i18n="only_multi">רק מוצרים שנמכרים ביותר מרשת אחת</span></label>
+        <label class="sort"><span class="sr-only" data-i18n="sort_label">מיון</span>
+          <select id="sort">
+            <option value="popular" data-i18n="sort_popular">הכי נפוצים</option>
+            <option value="saving" data-i18n="sort_saving">הפער הכי גדול בין הרשתות</option>
+            <option value="cheap" data-i18n="sort_cheap">מחיר: מהזול ליקר</option>
+            <option value="name" data-i18n="sort_name">לפי שם</option>
+          </select>
+        </label>
+      </div>
+      <div id="results" class="results" aria-live="polite">
+        <div class="empty">
+          <p class="empty-title" data-i18n="empty_home_title">מתחילים מחלקה או מחיפוש</p>
+          <p data-i18n="empty_home">בחרו מחלקה למעלה, או הקלידו שם של מוצר. לכל מוצר תראו את המחיר בכל רשת, והזול ביותר מסומן.</p>
+        </div>
+      </div>
+      <button id="more" class="more" hidden data-i18n="more">הצגת עוד מוצרים</button>
+    </section>
+
+    <aside class="basket" data-i18n-aria="basket" aria-label="הסל שלי">
+      <div class="basket-head">
+        <h2 data-i18n="basket">הסל שלי</h2>
+        <span id="count" class="count" data-i18n-aria="basket_count" aria-label="מספר מוצרים בסל">0</span>
+      </div>
+      <ul id="basket-items"></ul>
+      <div id="totals" aria-live="polite"></div>
+      <button id="clear" class="ghost" data-i18n="clear">ריקון הסל</button>
+    </aside>
+  </div>
+</main>
+
+<button id="basket-fab" class="basket-fab" hidden><span data-i18n="basket">הסל שלי</span> <span id="fab-count">0</span></button>
+
+<footer class="foot">
+  <p data-i18n="foot">המחירים מתוך קבצי שקיפות המחירים שהרשתות מחויבות לפרסם לפי חוק. מבצעי מועדון מוצגים בנפרד ולא נכללים בהשוואה.</p>
+</footer>
+
+<script src="i18n.js?v=202611060142"></script>
+<script>window.STATIC_DATA = "data/products.json?v=202611060142";</script>
+<script src="app.js?v=202611060142"></script>
+</body>
+</html>
